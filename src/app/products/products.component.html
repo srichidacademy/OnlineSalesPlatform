@@ -1,0 +1,26 @@
+<h2>Product List</h2>
+  <table class="table table-bordered">
+    <thead>
+      <div style="text-align: right;width:100%"><button (click)="addNewProduct()" class="btn btn-primary">Add Product</button></div>
+      
+<tr>
+  <th>Product ID</th>
+  <th>Product Category</th>
+  <th>Product Name</th>
+  <th>Unit Price</th>
+  <th>Stock Available</th>
+  <th>Mf. Date</th>
+</tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.ProductId}}</td>
+        <td >{{product.ProductCategory}}</td>
+        <td >{{product.ProductName}}</td>
+        <td style="color:red" *ngIf="product.UnitPrice>50000">{{product.UnitPrice | currency:'INR'}}</td>
+        <td  *ngIf="product.UnitPrice<=50000">{{product.UnitPrice | currency:'INR'}}</td>
+        <td [ngStyle]="{'color':product.UnitPrice>=10?'green':'blue'}">{{product.StockAvailable}}</td>
+        <td>{{product.CreatedOn | date:'dd-MM-yyyy'}}</td>
+      </tr>
+    </tbody>
+  </table>

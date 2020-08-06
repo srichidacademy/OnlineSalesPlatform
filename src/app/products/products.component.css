@@ -1,0 +1,14 @@
+.tdTextAlign{
+    text-align: center;
+    }
+
+.tdProductNameTextColor{
+color:blue;
+}
+.tdProductIdTextColor{
+    color:red;
+    }
+
+#productTable{
+    width:800px;
+}
