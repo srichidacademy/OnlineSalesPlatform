@@ -1,7 +1,9 @@
 <h2>Product List</h2>
   <table class="table table-bordered">
     <thead>
-      <div style="text-align: right;width:100%"><button (click)="addNewProduct()" class="btn btn-primary">Add Product</button></div>
+      <div style="text-align: right;width:100%"><button (click)="addNewProduct()" class="btn btn-primary">Add Product</button>
+      Results showing for: {{selectedCategory}}<button (click)="applyFilter()" class="btn btn-primary">Show Data</button>
+      </div>
       
 <tr>
   <th>Product ID</th>
@@ -13,7 +15,7 @@
 </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of filterData">
         <td>{{product.ProductId}}</td>
         <td >{{product.ProductCategory}}</td>
         <td >{{product.ProductName}}</td>

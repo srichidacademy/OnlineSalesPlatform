@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -11,6 +10,9 @@ import { CartComponent } from './cart/cart.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { SharedService } from './Services/shared.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { AddProductComponent } from './add-product/add-product.component';
     CartComponent,
     SignInComponent,
     RegisterComponent,
-    AddProductComponent
+    AddProductComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
