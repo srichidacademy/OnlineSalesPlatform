@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-selectedCategory:string;
+selectedCategory:number;
   constructor(private router:Router,private sharedService:SharedService) { }
 
   ngOnInit(): void {
     this.sharedService.sharedMessage.subscribe(message => this.selectedCategory = message)
   }
 
-  SendData(selectedOption:string) {
+  SendData(selectedOption:number) {
     this.sharedService.ChangeSelectedCategory(selectedOption);
     this.router.navigate(['products']);
   }

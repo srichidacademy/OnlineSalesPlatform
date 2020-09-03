@@ -2,7 +2,8 @@
   <table class="table table-bordered">
     <thead>
       <div style="text-align: right;width:100%"><button (click)="addNewProduct()" class="btn btn-primary">Add Product</button>
-      Results showing for: {{selectedCategory}}<button (click)="applyFilter()" class="btn btn-primary">Show Data</button>
+      Results showing for: {{selectedCategory}}
+      <!-- <button (click)="applyFilter()" class="btn btn-primary">Show Data</button> -->
       </div>
       
 <tr>
@@ -17,11 +18,11 @@
     <tbody>
       <tr *ngFor="let product of filterData">
         <td>{{product.ProductId}}</td>
-        <td >{{product.ProductCategory}}</td>
+        <td >{{product.Category}}</td>
         <td >{{product.ProductName}}</td>
         <td style="color:red" *ngIf="product.UnitPrice>50000">{{product.UnitPrice | currency:'INR'}}</td>
         <td  *ngIf="product.UnitPrice<=50000">{{product.UnitPrice | currency:'INR'}}</td>
-        <td [ngStyle]="{'color':product.UnitPrice>=10?'green':'blue'}">{{product.StockAvailable}}</td>
+        <td [ngStyle]="{'color':product.UnitPrice>=10?'green':'blue'}">{{product.UnitsInStock}}</td>
         <td>{{product.CreatedOn | date:'dd-MM-yyyy'}}</td>
       </tr>
     </tbody>

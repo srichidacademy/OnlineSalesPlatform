@@ -11,6 +11,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { SharedService } from './Services/shared.service';
+import {ProductService} from './Services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -30,9 +31,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    HttpClientModule
   ],
-  providers: [SharedService],
+  providers: [SharedService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
