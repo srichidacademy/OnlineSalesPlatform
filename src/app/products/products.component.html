@@ -13,6 +13,8 @@
   <th>Unit Price</th>
   <th>Stock Available</th>
   <th>Mf. Date</th>
+  <th>Product View</th>
+  <th></th>
 </tr>
     </thead>
     <tbody>
@@ -24,6 +26,8 @@
         <td  *ngIf="product.UnitPrice<=50000">{{product.UnitPrice | currency:'INR'}}</td>
         <td [ngStyle]="{'color':product.UnitPrice>=10?'green':'blue'}">{{product.UnitsInStock}}</td>
         <td>{{product.CreatedOn | date:'dd-MM-yyyy'}}</td>
+        <td><img width="30%" src="../../assets/Laptop.png"></td>
+        <td><button type="button" class="btn btn-warning"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button></td>
       </tr>
     </tbody>
   </table>

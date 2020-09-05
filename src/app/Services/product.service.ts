@@ -6,7 +6,7 @@ import { Product } from '../products/products.component';
   providedIn: 'root'
 })
 export class ProductService {
-url:string='https://localhost:44387/api/Product/';
+url:string='http://localhost/onlinesalesbackendapi/api/Product/';
   constructor(private http:HttpClient) { }
   getAllProducts()
   {
