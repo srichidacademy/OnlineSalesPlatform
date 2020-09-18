@@ -1,43 +1,45 @@
-<div class="container">
-    <h2>Add New Product</h2>
-    <div class="form-horizontal">
-    <div class="row">
-    <div class="col-md-4">
-    Product Name:
-    </div>
-    <div class="col-md-8">
-    <input type="text" class="form-control" id="ProductName">
-    </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-md-4">
-      Unit Price:
+<div class="login-form">
+  <form (ngSubmit)="SaveProduct()" #f="ngForm">
+      <h2 class="text-center">Add New Product</h2>       
+      <div class="form-group">
+        <label>Product Name:</label>
+          <input type="text" class="form-control" placeholder="Product Name" [(ngModel)]="newProduct.ProductName" name="ProductName" required="required">
       </div>
-      <div class="col-md-8">
-      <input type="text" class="form-control" id="UnitPrice">
+      <div class="form-group">
+        <label>SKU:</label>
+          <input type="text" class="form-control" placeholder="SKU" [(ngModel)]="newProduct.SKU" name="SKU">
       </div>
+      <div class="form-group">
+        <label >Product Category</label>
+        <select class="form-control" [(ngModel)]="newProduct.Category" name="Category">
+          <option value="1">Mobile</option>
+          <option value="2">Computer</option>
+          <option value="3">Watch</option>
+          <option value="0">Other</option>          
+        </select>
       </div>
-      <br>
-      <div class="row">
-        <div class="col-md-4">
-        Availability:
-        </div>
-        <div class="col-md-8">
-        <input type="text" class="form-control" id="Availability">
-        </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-md-2">
-          
-          </div>
-          <div class="col-md-10">
-          <input type="button" class="btn btn-success" value="Save">
-          <input type="button" class="btn btn-danger" value="Cancel">
-          </div>
-          </div>
-    
-    
-    </div>
-    </div>
+      <div class="form-group">
+        <label>Description:</label>
+          <input type="text" class="form-control" placeholder="Product Description" [(ngModel)]="newProduct.Description" name="Description" required="required">
+      </div>
+      <div class="form-group">
+        <label>Image Url:</label>
+          <input type="text" class="form-control" placeholder="Image Url" [(ngModel)]="newProduct.ImageUrl" name="ImageUrl">
+      </div>
+      <div class="form-group">
+        <label>Unit Price:</label>
+          <input type="text" class="form-control" placeholder="0.00" [(ngModel)]="newProduct.UnitPrice" name="UnitPrice">
+      </div>
+      <div class="form-group">
+        <label>Unit in Stock:</label>
+          <input type="text" class="form-control" placeholder="0" [(ngModel)]="newProduct.UnitsInStock" name="UnitsInStock">
+      </div>
+      <div class="form-group" style="color:red;text-align:center">
+          {{errorMessage}}          
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Save</button>
+      </div>           
+  </form>
+  
+</div>

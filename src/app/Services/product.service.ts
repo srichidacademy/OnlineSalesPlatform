@@ -18,4 +18,8 @@ url:string='http://localhost/onlinesalesbackendapi/api/Product/';
     return this.http.get<Product[]>(this.url+'GetProuductsByCategory/'+categoryId);
   }
 
+  SaveProduct(newProduct:Product){
+    return this.http.post<number>('https://localhost:44387/api/Product/PostProductDetails', newProduct);
+}
+
 }

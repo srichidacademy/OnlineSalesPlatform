@@ -14,6 +14,13 @@ import { SharedService } from './Services/shared.service';
 import {ProductService} from './Services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import {LoginService} from './Services/login.service';
+import { FormsModule }   from '@angular/forms';
+import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
+import {SessionService} from './Services/session.service';
+import {CustomerService} from './Services/customer.service';
+
 
 @NgModule({
   declarations: [
@@ -26,14 +33,17 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SignInComponent,
     RegisterComponent,
     AddProductComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProductdetailsComponent,
+    CustomerdashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [SharedService,ProductService],
+  providers: [SharedService,ProductService,LoginService,SessionService,CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

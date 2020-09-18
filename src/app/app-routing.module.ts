@@ -7,6 +7,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { CartComponent } from './cart/cart.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path:'aboutus',component:AboutUsComponent},
   {path:'contactus',component:ContactUsComponent},
   {path:'login',component:SignInComponent},
-  {path:'cart',component:CartComponent}
+  {path:'cart',component:CartComponent},
+  {path:'proudctDetails',component:ProductdetailsComponent},
+  {path:'customerdashboard',component:CustomerdashboardComponent}
 ];
 
 @NgModule({

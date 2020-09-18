@@ -1,9 +1,7 @@
 <h2>Product List</h2>
   <table class="table table-bordered">
     <thead>
-      <div style="text-align: right;width:100%"><button (click)="addNewProduct()" class="btn btn-primary">Add Product</button>
-      Results showing for: {{selectedCategory}}
-      <!-- <button (click)="applyFilter()" class="btn btn-primary">Show Data</button> -->
+      <div style="text-align: right;width:100%"><button (click)="addNewProduct()" *ngIf="loggedInCustomerId==2" class="btn btn-primary">Add Product</button>
       </div>
       
 <tr>
@@ -14,6 +12,7 @@
   <th>Stock Available</th>
   <th>Mf. Date</th>
   <th>Product View</th>
+  <th></th>
   <th></th>
 </tr>
     </thead>
@@ -27,7 +26,8 @@
         <td [ngStyle]="{'color':product.UnitPrice>=10?'green':'blue'}">{{product.UnitsInStock}}</td>
         <td>{{product.CreatedOn | date:'dd-MM-yyyy'}}</td>
         <td><img width="30%" src="../../assets/Laptop.png"></td>
-        <td><button type="button" class="btn btn-warning"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button></td>
+        <td><a href="proudctDetails">View Details</a></td>
+        <td><button type="button" (click)="AddtoCart(product.ProductId)" class="btn btn-warning"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button></td>
       </tr>
     </tbody>
   </table>
